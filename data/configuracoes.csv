@@ -1,0 +1,18 @@
+Chave,Valor,Descrição
+edicao_atual,2026,Ano da edição atual
+data_inicio,14/09/2026,Data de início da Tech Week
+data_fim,18/09/2026,Data de fim da Tech Week
+hero_titulo,São Paulo Tech Week 2026,Título do hero
+hero_subtitulo,14–18 de setembro · São Paulo,Subtítulo do hero
+cta_principal,Be Notified,Texto do CTA principal
+cta_principal_link,#notify,Link do CTA principal
+cta_host,Host an Event,Texto do CTA para hospedar
+cta_host_link,#host,Link do CTA para hospedar
+cta_support,Support,Texto do CTA apoiar
+cta_support_link,mailto:contato@techweeksaopaulo.com.br,Link do CTA apoiar
+email_contato,contato@techweeksaopaulo.com.br,Email de contato
+disclaimer,"Os eventos são organizados por terceiros. SP Tech Week não se responsabiliza pelo conteúdo, segurança ou experiência.",Aviso legal exibido no rodapé
+instagram,https://www.instagram.com/saopaulotechweek,URL do Instagram
+linkedin,,URL do LinkedIn (opcional)
+dominio,techweeksaopaulo.com.br,Domínio do site
+aceita_submissoes,SIM,Se o form de submissão está aberto (SIM/NÃO)

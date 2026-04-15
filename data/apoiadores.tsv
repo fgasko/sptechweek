@@ -1,0 +1,52 @@
+Categoria	Nome	Logo (nome do arquivo ou URL)	Site	Ordem	Publicar?
+Host	Cubo	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/663e7d38d6809cf528e97a77_Logo_Cubo_preto.png		1	SIM
+Host	Endeavor	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/663e8b1d52e9e9dd44d66959_Logo_Endeavor.svg.png		2	SIM
+Host	Beacon	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/69de9635956f8100a31c77db_Beacon_Hor_Cor_Positivo%404x%20(1).png		3	SIM
+Host	AWS Startups	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/685ad88256a6e04d5f43c609_AWS_Startups_Squid-Ink_96px_RGB.png		4	SIM
+Host	SPN	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/68ad047d72c3bcc3a9184afa_SPN_Logo_NEG_Preto_RGB.png		5	SIM
+Tech Partner	AWS	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/685ad88256a6e04d5f43c609_AWS_Startups_Squid-Ink_96px_RGB.png		1	SIM
+Tech Partner	Nvidia	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/685b02f76d60069e18b70757_Nvidia%20Logo.png		2	SIM
+Tech Partner	Microsoft	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/685c131b98019199ec7d0233_Microsoft-logo_rgb_c-gray_cut_cut.png		3	SIM
+Tech Partner	Oracle	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/688a598a856421e4ea3c5955_Oracle_rgb_black_logo.png		4	SIM
+VC Partner	Norte Ventures	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/6643a72b446d9c5c1e09557e_Logo_Norte_Black.png		1	SIM
+VC Partner	[confirmar VC 2]	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/68529f125a27d10a7f5e473d_jruDJivBz54ANZZBXBEq3VuQBUK1689268534427_200x200.png		2	SIM
+VC Partner	Alexia Ventures	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/689101e9c9e4b4f78021fa7f_66a117e5d535f4bbb370547e_Alexia-Ventures.png		3	SIM
+VC Partner	Antler	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/6852cb6b022b73eb5ee6aa3f_Antler%20Logo_Red.png		4	SIM
+VC Partner	[confirmar VC 5]	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/6852cbc460fb76d3db239018_e4fa39ff-22c5-4e73-929c-8dcf00273dfe.png		5	SIM
+VC Partner	[confirmar VC 6]	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/6852cc103b9b052ddb445c39_7b4dc31d-7e03-43e9-a0e7-0197ea9b561f.png		6	SIM
+VC Partner	[confirmar VC 7]	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/6890cc2264905574ad2ba097_images%20(5)%20(1).png		7	SIM
+VC Partner	[confirmar VC 8]	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/6852cc80cf1686c477eedec5_8e9a3fe9-bf2d-4e8a-82b1-d19c8113f76a-4%20(1).png		8	SIM
+VC Partner	Domo VC	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/66427e701d1c68c7666a2196_Logo_Domo_Vc.png		9	SIM
+VC Partner	Flourish Ventures	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/686d3b60d06657e070bab468_Flourish-Logo-Color-Gradient%20(8)%20(1).png		10	SIM
+VC Partner	Headline	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/66427be20c60c52a74109778_Headline%20Logo.png		11	SIM
+VC Partner	[confirmar VC 12]	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/6851d269ce3506f567d8dd7e_logo1_indicator.webp		12	SIM
+VC Partner	Kaszek	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/66c3ad63922c379a8d3d3e45_Logo%20Kaszek%20Preto.png		13	SIM
+VC Partner	Latitud	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/663e7e4f640f4f55a6648ff0_Logo_Latitud_preto.png		14	SIM
+VC Partner	Monashees	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/68bf50584f7b8d8b58d0b503_Logo_Monashees_black_Crop.png		15	SIM
+VC Partner	NXTP Ventures	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/6635a864dfe3b09320ddd806_NXTP%20Ventures_Logo_High%20copy.png		16	SIM
+VC Partner	[confirmar VC 17]	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/66d0df804e264e85df60de68_image%201.png		17	SIM
+VC Partner	Quona Capital	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/66c548346a6ab2c101d04f6e_quona_logo.png		18	SIM
+VC Partner	[confirmar VC 19]	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/6851d652102e37f77f1b2c60_2eQ1mDo45D1llb7xy1DycexIe541738308589756_200x200.png		19	SIM
+VC Partner	SP Ventures	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/664392d84438a8e040532a46_sp%20ventures%20logo_black.png		20	SIM
+VC Partner	[confirmar VC 21]	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/6635a864dfe3b09320ddd7fb_IMG_0152.PNG		21	SIM
+VC Partner	Wow Aceleradora	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/687e8a58a3dc1732e48e227d_Logo_wow.png		22	SIM
+VC Partner	Positive Ventures	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/68b114bbdee326ad54d7d1fd_Positive_Ventures_logo_transparent.png		23	SIM
+VC Partner	Circulate Capital	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/68b11619b13efc1380b7ca18_circulate%20capital%20logo.png		24	SIM
+VC Partner	Impact Earth	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/68b116ea31fd5e49324cbef2_IMPACT_EARTH_LOGO%20small.png		25	SIM
+VC Partner	ClimateHack SP	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/68b1181d6b5947e467c4916a_ClimateHack-wide-chapter-logo-SAO%20PAULO.svg		26	SIM
+VC Partner	[confirmar VC 27]	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/68b1190f4e43973a04c461a7_63f583127e970649bb363940_Vertical.svg		27	SIM
+VC Partner	Eretz Einstein	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/68b118b3273f5f8b3d82fa55_LOGO-eretz-einstein-2025-18.png		28	SIM
+VC Partner	Vox Capital	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/68b11a3fc7d21bfe6ca37aea_logo_vox_transparent.png		29	SIM
+Supporter	Colombia Techweek	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/66a2a97886235160bc772d0a_colombia_techweek_logo.png		1	SIM
+Supporter	Mexico Techweek	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/66a2ab094a6fbb6a5c16cb68_Mexico_Techweek_Logo.png		2	SIM
+Supporter	[confirmar Supp 3]	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/66c3509dcaf1254ce5cae8d4_%5BStartups%5D%20Preto%20fundo%20transparente.png		3	SIM
+Supporter	[confirmar Supp 4]	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/6643c5149df26c55e32e7e4a_Logo%20N.png		4	SIM
+Supporter	Inovabra	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/688a6b2bafe35f0cc5df61a9_Logo%20inovabra%20Preta.png		5	SIM
+Supporter	Governo de SP	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/689a433f92dd7d78d500957b_4-vertical-slogan%20copy_cut_SP%20Governo.png		6	SIM
+Supporter	[confirmar Supp 7]	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/689d28394b79b8c0d99b1eca_logo_preto.png		7	SIM
+Supporter	GenAI Lab	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/68a635edfaa8385a0e6cd729_GenAILab%20(1).png		8	SIM
+Supporter	[confirmar Supp 9]	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/689f5cfc7843d133eb0b2bc2_logo%20(7).png		9	SIM
+Supporter	Globiant	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/68b11348d07a344dfae31f14_Globiant%20Logo.png		10	SIM
+Supporter	Torq	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/68b9e2f89fe886e2832d081a_originais_torq_rgb_transparente-01.png		11	SIM
+Supporter	SlingHub	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/68b9e36729f1d646c083c197_SlingHub-Logo-Azul.svg		12	SIM
+Supporter	Startups LATAM	https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/68bb2af15c76bd8840e48123_LOGOS%20STARTUPS%20LATAM_crop.png		13	SIM

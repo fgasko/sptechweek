@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>São Paulo Tech Week 2026</title>
+<meta name="description" content="São Paulo Tech Week 2026 — Sep 14–18. A week of open and invite-only events bringing together the LatAm tech community." />
+<meta property="og:title" content="São Paulo Tech Week 2026" />
+<meta property="og:description" content="Sep 14–18, 2026. A week of events across São Paulo." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Koulen&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #000;
+    --ink-soft: #444;
+    --paper: #fff;
+    --peach: #FAE9E6;          /* warm sponsor backdrop from original */
+    --paleblue: #EAF0FF;        /* secondary sponsor backdrop */
+    --accent: #E1FF01;          /* yellow-green used on "2026" */
+    --hot: #0248F7;             /* original blue highlight */
+    --rule: #E4E4DF;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'PT Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 1360px; margin: 0 auto; padding: 0 32px; }
+  .display, h1, h2, h3, .btn, .nav-link, .day-tab {
+    font-family: 'Koulen', 'Impact', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+  h1 { font-size: clamp(3rem, 10vw, 9rem); line-height: 0.9; margin: 0; color: #fff; }
+  h2 { font-size: clamp(2rem, 5vw, 4rem); line-height: 0.95; margin: 0; }
+  h3 { font-size: 1.25rem; line-height: 1.2; margin: 0; }
+  a { color: inherit; text-decoration: none; }
+  button { cursor: pointer; border: 0; background: 0; font: inherit; }
+
+  /* HEADER */
+  header.site {
+    position: sticky; top: 0; z-index: 30;
+    background: var(--ink); color: #fff;
+    border-bottom: 2px solid var(--ink);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+  .brand { font-family: 'Koulen', sans-serif; font-size: 1.5rem; letter-spacing: 0.04em; color: #fff; }
+  .nav-links { display: flex; gap: 36px; align-items: center; }
+  .nav-link {
+    color: #fff; font-size: 1.05rem; letter-spacing: 0.08em;
+    padding: 6px 0; border-bottom: 2px solid transparent; transition: border-color .2s;
+  }
+  .nav-link:hover { border-color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    min-height: 82vh;
+    color: #fff;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.05) 40%, rgba(0,0,0,0.35) 100%),
+      url("https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/663e78afbf395929cc9ea836_techweek%20image%20small.jpeg") center center / cover no-repeat,
+      #555;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 80px 0 60px;
+    overflow: hidden;
+  }
+  .hero h1 { letter-spacing: 0.015em; }
+  .hero h1 .year { color: var(--accent); display: block; }
+  .hero-meta {
+    display: inline-flex; align-items: center; gap: 10px;
+    margin-top: 28px;
+    font-family: 'Koulen', sans-serif; font-size: 1.15rem; letter-spacing: 0.1em; color: #fff;
+    background: rgba(0,0,0,0.45); padding: 10px 18px; border-radius: 4px;
+    width: fit-content;
+  }
+  .hero-meta svg { display: inline-block; }
+
+  /* STAY TUNED BANNER */
+  .banner {
+    background: var(--ink); color: #fff;
+    padding: 52px 0;
+  }
+  .banner-inner {
+    text-align: center;
+    font-family: 'Koulen', sans-serif;
+    font-size: clamp(0.95rem, 1.55vw, 1.55rem);
+    letter-spacing: 0.05em;
+    padding: 26px 32px;
+    border: 2px solid #fff;
+    max-width: 1320px; margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  @media (max-width: 820px) {
+    .banner-inner { white-space: normal; font-size: 1rem; padding: 22px 20px; }
+  }
+  .banner-inner .accent { color: var(--accent); }
+
+  /* SECTION SHELL */
+  section { padding: 90px 0; }
+  .section-label {
+    font-family: 'Koulen', sans-serif; font-size: 2.5rem; letter-spacing: 0.04em;
+    margin: 0 0 44px; text-align: center;
+  }
+
+  /* SCHEDULE */
+  #events { background: var(--paper); }
+  .day-tabs {
+    display: flex; gap: 2px; flex-wrap: wrap;
+    border-bottom: 2px solid var(--ink);
+    margin-bottom: 0;
+  }
+  .day-tab {
+    padding: 18px 24px;
+    background: transparent;
+    font-size: 1.2rem;
+    letter-spacing: 0.06em;
+    color: var(--ink-soft);
+    border: 2px solid transparent;
+    border-bottom: 0;
+    cursor: pointer;
+    transition: color .15s, background .15s;
+  }
+  .day-tab:hover { color: var(--ink); }
+  .day-tab.active {
+    background: var(--ink);
+    color: #fff;
+  }
+  .day-panel { padding: 24px 0 0; display: none; }
+  .day-panel.active { display: block; }
+  .events-list { display: flex; flex-direction: column; }
+  .event-row {
+    display: grid;
+    grid-template-columns: 160px 160px 1fr 200px 140px;
+    gap: 20px;
+    padding: 26px 8px;
+    border-bottom: 1px solid var(--rule);
+    align-items: center;
+    transition: background .15s;
+  }
+  .event-row:hover { background: #fafafa; }
+  .ev-time {
+    font-family: 'Koulen', sans-serif;
+    font-size: 1.35rem; letter-spacing: 0.04em;
+    color: var(--ink);
+  }
+  .ev-loc {
+    font-family: 'Koulen', sans-serif;
+    font-size: 1rem; letter-spacing: 0.06em;
+    color: var(--ink);
+    text-transform: uppercase;
+  }
+  .ev-name {
+    font-family: 'Koulen', sans-serif;
+    font-size: 1.5rem; letter-spacing: 0.03em;
+    color: var(--ink);
+    text-transform: uppercase;
+    line-height: 1.1;
+  }
+  .ev-org { font-size: 0.95rem; color: var(--ink-soft); }
+  .ev-cta {
+    justify-self: end;
+    font-family: 'Koulen', sans-serif;
+    font-size: 0.95rem; letter-spacing: 0.08em;
+    padding: 10px 18px;
+    border: 2px solid var(--ink);
+    transition: background .15s, color .15s;
+    white-space: nowrap;
+  }
+  .ev-cta:hover { background: var(--ink); color: #fff; }
+  .ev-invite {
+    justify-self: end;
+    font-family: 'Koulen', sans-serif;
+    font-size: 0.95rem; letter-spacing: 0.08em;
+    color: var(--hot);
+    white-space: nowrap;
+  }
+  .empty-day { padding: 60px 20px; text-align: center; color: var(--ink-soft); font-style: italic; }
+
+  /* SPONSORS */
+  #sponsors { background: var(--peach); padding: 100px 0; }
+  #sponsors .sponsor-group { margin-bottom: 72px; }
+  #sponsors .sponsor-group:last-child { margin-bottom: 0; }
+  #sponsors .group-title {
+    font-family: 'Koulen', sans-serif;
+    font-size: 2.5rem; letter-spacing: 0.04em;
+    text-align: center;
+    margin: 0 0 36px;
+  }
+  .sponsor-grid {
+    display: grid;
+    gap: 48px 32px;
+    align-items: center;
+    justify-items: center;
+  }
+  .sponsor-grid.big { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); max-width: 1200px; margin: 0 auto; }
+  .sponsor-grid.sm  { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); max-width: 1280px; margin: 0 auto; }
+  .sponsor-cell {
+    width: 100%;
+    height: 80px;
+    display: flex; align-items: center; justify-content: center;
+    /* NO background — logos sit directly on the peach section */
+  }
+  .sponsor-cell img {
+    max-width: 100%; max-height: 100%;
+    object-fit: contain;
+  }
+  .sponsor-cell.placeholder {
+    color: var(--ink-soft);
+    font-size: 0.9rem; font-weight: 700;
+    text-align: center; padding: 0 10px;
+  }
+
+  /* HOST SECTION */
+  #host { background: var(--paleblue); padding: 100px 0; }
+  #host .host-grid {
+    display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px;
+    max-width: 1200px; margin: 0 auto;
+  }
+  #host .host-lede {
+    font-size: 1.1rem; line-height: 1.6; color: var(--ink-soft);
+    margin-top: 20px; max-width: 38ch;
+  }
+  #host h2 { font-size: clamp(2.4rem, 5vw, 4.5rem); line-height: 0.95; }
+  #host h2 .accent { color: var(--hot); }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-row.full { grid-column: 1 / -1; }
+  .field-label { display: block; font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 6px; letter-spacing: 0.03em; }
+  .field-label .req { color: var(--hot); }
+  .field-input, .field-textarea, .field-select {
+    width: 100%;
+    background: #fff;
+    border: 2px solid var(--ink);
+    color: var(--ink);
+    padding: 12px 14px;
+    border-radius: 0;
+    font: inherit;
+    transition: border-color .15s;
+  }
+  .field-input:focus, .field-textarea:focus, .field-select:focus {
+    outline: none; border-color: var(--hot);
+  }
+  .field-textarea { min-height: 110px; resize: vertical; }
+  .honeypot { position: absolute; left: -9999px; opacity: 0; pointer-events: none; }
+  .form-submit {
+    background: var(--ink); color: #fff;
+    padding: 16px 32px; border: 2px solid var(--ink);
+    font-family: 'Koulen', sans-serif; font-size: 1.1rem; letter-spacing: 0.1em;
+    margin-top: 20px;
+    transition: background .15s, color .15s;
+  }
+  .form-submit:hover { background: var(--accent); color: var(--ink); border-color: var(--ink); }
+  .form-status { margin-top: 16px; font-size: 0.95rem; min-height: 24px; font-weight: 700; }
+  .form-status.success { color: #0a6d22; }
+  .form-status.error { color: #b00020; }
+
+  /* REGISTER (notify) */
+  #register {
+    background: var(--ink); color: #fff;
+    padding: 100px 0; text-align: center;
+  }
+  #register h2 { color: #fff; font-size: clamp(2.5rem, 6vw, 5rem); }
+  #register h2 .accent { color: var(--accent); }
+  #register p { max-width: 50ch; margin: 20px auto 40px; color: #ccc; font-size: 1.1rem; }
+  .notify-form {
+    display: flex; gap: 0; max-width: 520px; margin: 0 auto; flex-wrap: wrap;
+  }
+  .notify-form input[type=email] {
+    flex: 1; min-width: 220px;
+    background: #fff; color: var(--ink);
+    border: 2px solid #fff; padding: 14px 18px;
+    font: inherit;
+  }
+  .notify-form button {
+    background: var(--accent); color: var(--ink);
+    border: 2px solid var(--accent); padding: 14px 28px;
+    font-family: 'Koulen', sans-serif; font-size: 1.1rem; letter-spacing: 0.1em;
+    cursor: pointer;
+  }
+  .notify-form button:hover { background: #fff; border-color: #fff; }
+
+  /* FOOTER */
+  footer.site { background: var(--ink); color: #fff; padding: 48px 0 32px; border-top: 2px solid var(--ink); }
+  .footer-grid { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 28px; }
+  .footer-disclaimer { font-size: 0.9rem; color: #aaa; max-width: 62ch; line-height: 1.55; }
+  .footer-links { display: flex; gap: 26px; font-size: 1rem; font-family: 'Koulen', sans-serif; letter-spacing: 0.08em; }
+  .footer-links a { color: #fff; }
+  .footer-links a:hover { color: var(--accent); }
+  .footer-meta { margin-top: 28px; padding-top: 20px; border-top: 1px solid #333; font-size: 0.85rem; color: #888; }
+
+  /* UTIL */
+  .loading { padding: 40px 0; text-align: center; color: var(--ink-soft); font-style: italic; }
+
+  /* RESPONSIVE */
+  @media (max-width: 960px) {
+    #host .host-grid { grid-template-columns: 1fr; gap: 40px; }
+    .event-row { grid-template-columns: 110px 1fr; gap: 8px 16px; }
+    .event-row .ev-loc { grid-column: 1; grid-row: 2; font-size: 0.85rem; color: var(--ink-soft); }
+    .event-row .ev-name { grid-column: 2; grid-row: 1 / span 2; }
+    .event-row .ev-org { grid-column: 2; grid-row: 3; }
+    .event-row .ev-cta, .event-row .ev-invite { grid-column: 1 / -1; justify-self: start; margin-top: 8px; }
+  }
+  @media (max-width: 680px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .nav-links { gap: 20px; }
+    .hero { min-height: 70vh; }
+    .day-tab { padding: 14px 16px; font-size: 1rem; }
+    section { padding: 64px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="container nav">
+    <a href="#" class="brand">TECHWEEK.</a>
+    <nav class="nav-links">
+      <a href="#events" class="nav-link">Events</a>
+      <a href="#sponsors" class="nav-link">Event Partners</a>
+      <a href="#host" class="nav-link">Host</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <h1 id="hero-title">SAO PAULO<br/>TECH WEEK<span class="year" id="hero-year">2026</span></h1>
+      <div class="hero-meta">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="5" width="18" height="16" rx="1"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="16" y1="3" x2="16" y2="7"/>
+        </svg>
+        <span id="hero-dates">SEP 14–18 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="banner">
+    <div class="container">
+      <div class="banner-inner" id="banner">
+        STAY TUNED! SAO PAULO TECH WEEK 2026 TAKES PLACE FROM <span class="accent">SEPTEMBER 14 TO SEPTEMBER 18</span>.
+      </div>
+    </div>
+  </div>
+
+  <section id="events">
+    <div class="container">
+      <h2 class="section-label">Events</h2>
+      <div class="day-tabs" id="day-tabs" role="tablist">
+        <!-- tabs populated by JS -->
+      </div>
+      <div id="day-panels"><!-- panels populated by JS --></div>
+    </div>
+  </section>
+
+  <section id="sponsors">
+    <div class="container">
+      <div id="sponsors-root" class="loading">Loading partners…</div>
+    </div>
+  </section>
+
+  <section id="host">
+    <div class="container">
+      <div class="host-grid">
+        <div>
+          <h2>HOST AN <br/><span class="accent">EVENT</span></h2>
+          <p class="host-lede">Want to add your event to the official Tech Week 2026 program? Submit the details and our curation team will review within 5 business days.</p>
+        </div>
+        <form id="host-form" class="form-grid" autocomplete="off">
+          <div class="form-row full">
+            <label class="field-label" for="f-event">Event name <span class="req">*</span></label>
+            <input class="field-input" id="f-event" name="eventName" required maxlength="120" />
+          </div>
+          <div class="form-row">
+            <label class="field-label" for="f-date">Date <span class="req">*</span></label>
+            <input class="field-input" id="f-date" name="date" type="date" required min="2026-09-14" max="2026-09-18" />
+          </div>
+          <div class="form-row">
+            <label class="field-label" for="f-time">Time <span class="req">*</span></label>
+            <input class="field-input" id="f-time" name="time" type="time" required />
+          </div>
+          <div class="form-row">
+            <label class="field-label" for="f-location">Location <span class="req">*</span></label>
+            <input class="field-input" id="f-location" name="location" required placeholder="e.g. Itaim, Pinheiros, TBD" />
+          </div>
+          <div class="form-row">
+            <label class="field-label" for="f-category">Category</label>
+            <input class="field-input" id="f-category" name="category" placeholder="e.g. Fintech, AI, Web3" />
+          </div>
+          <div class="form-row full">
+            <label class="field-label" for="f-desc">Description <span class="req">*</span></label>
+            <textarea class="field-textarea" id="f-desc" name="description" required maxlength="800"></textarea>
+          </div>
+          <div class="form-row">
+            <label class="field-label" for="f-org">Organizer <span class="req">*</span></label>
+            <input class="field-input" id="f-org" name="organizer" required />
+          </div>
+          <div class="form-row">
+            <label class="field-label" for="f-link">Registration link</label>
+            <input class="field-input" id="f-link" name="registrationLink" type="url" placeholder="https://…" />
+          </div>
+          <div class="form-row">
+            <label class="field-label" for="f-invite">Invite only? <span class="req">*</span></label>
+            <select class="field-select" id="f-invite" name="inviteOnly" required>
+              <option value="">Select…</option>
+              <option value="No">No (open to public)</option>
+              <option value="Yes">Yes (invited guests)</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label class="field-label" for="f-name">Your name <span class="req">*</span></label>
+            <input class="field-input" id="f-name" name="submitterName" required />
+          </div>
+          <div class="form-row">
+            <label class="field-label" for="f-email">Email <span class="req">*</span></label>
+            <input class="field-input" id="f-email" name="submitterEmail" type="email" required />
+          </div>
+          <div class="form-row">
+            <label class="field-label" for="f-phone">Phone <span class="req">*</span></label>
+            <input class="field-input" id="f-phone" name="submitterPhone" type="tel" required placeholder="+55 11 9 9999-9999" />
+          </div>
+          <input class="honeypot" tabindex="-1" autocomplete="off" name="company" />
+          <div class="form-row full">
+            <button type="submit" class="form-submit">SUBMIT EVENT</button>
+            <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="register">
+    <div class="container">
+      <h2>STAY IN THE <span class="accent">LOOP</span></h2>
+      <p>Drop your email and we'll let you know when the full program is out and registrations open.</p>
+      <form id="notify-form" class="notify-form">
+        <input type="email" required placeholder="your@email.com" />
+        <button type="submit">NOTIFY ME</button>
+      </form>
+      <div id="notify-status" style="margin-top: 18px; font-size: 0.95rem; color: #aaa;"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-disclaimer" id="footer-disclaimer">
+        Events are organized by third parties. SP Tech Week acts as a curation and aggregation platform and is not responsible for the content, safety, or experience of individual events.
+      </div>
+      <div class="footer-links">
+        <a href="#events">Events</a>
+        <a href="#sponsors">Partners</a>
+        <a href="#host">Host</a>
+        <a id="footer-contact" href="mailto:contato@techweeksaopaulo.com.br">Contact</a>
+      </div>
+    </div>
+    <div class="footer-meta">© 2026 São Paulo Tech Week · Sep 14–18, 2026</div>
+  </div>
+</footer>
+
+<script>
+/* ========================================================================
+   Data source: Google Sheet published as CSV per tab.
+   How to publish: File → Share → Publish to web → tab → CSV.
+   The IDs below are already pointing at Felipe's admin sheet.
+   ======================================================================== */
+const SHEET_ID = '14oNj1FQqZNyOi2t0Mn7NvSrGSe6PwGIBQhwhx57lR_0';
+// Published-to-web ID for the sheet (File → Share → Publish to web → Entire document)
+const SHEET_PUB_ID = '2PACX-1vTWQIUZO4N07ggyDW-bqT9M-rDvhGkbgZBB4NVwJOl2gvITgJVQ0hmiKo7b1aBR-hiKsTR6LUWYcKGT';
+const GIDS = {
+  eventos:        '0',
+  apoiadores:     '1034283949',
+  configuracoes:  '1322830819'
+};
+const WEBHOOK_URL = ''; // Paste Apps Script Web App URL after deploying apps-script.gs
+
+// Uses the published-to-web URL so the site reads data without requiring viewer permissions.
+// Google re-publishes every ~5 min in the background, so edits flow to the site automatically.
+const csvUrl = gid =>
+  `https://docs.google.com/spreadsheets/d/e/${SHEET_PUB_ID}/pub?output=csv&gid=${gid}&single=true`;
+
+/* --- CSV parser that handles quoted fields --- */
+function parseCSV(text) {
+  const rows = []; let row = []; let cur = ''; let inQ = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (inQ) {
+      if (c === '"' && text[i+1] === '"') { cur += '"'; i++; }
+      else if (c === '"') inQ = false;
+      else cur += c;
+    } else {
+      if (c === '"') inQ = true;
+      else if (c === ',') { row.push(cur); cur = ''; }
+      else if (c === '\n') { row.push(cur); rows.push(row); row = []; cur = ''; }
+      else if (c === '\r') { /* skip */ }
+      else cur += c;
+    }
+  }
+  if (cur !== '' || row.length) { row.push(cur); rows.push(row); }
+  return rows;
+}
+function rowsToObjects(rows) {
+  if (!rows.length) return [];
+  const headers = rows[0].map(h => h.trim());
+  return rows.slice(1).filter(r => r.some(c => c && c.trim())).map(r => {
+    const o = {}; headers.forEach((h, i) => o[h] = (r[i] || '').trim()); return o;
+  });
+}
+async function fetchSheet(gid) {
+  // Returns parsed rows or null if the sheet tab isn't published as CSV yet.
+  // Silent failure is expected pre-publish; the DEMO fallback takes over.
+  try {
+    const res = await fetch(csvUrl(gid), { cache: 'no-store' });
+    if (!res.ok) return null;
+    return rowsToObjects(parseCSV(await res.text()));
+  } catch (e) {
+    return null;
+  }
+}
+
+/* Demo data used when sheets aren't published yet.
+   Mirrors the real 2026 agenda and sponsor roster from techweeksaopaulo.com.br
+   so the preview always shows the full structure. */
+const CDN = 'https://cdn.prod.website-files.com/6635a864dfe3b09320ddd7ae/';
+const DEMO = {
+  eventos: [
+    {Data:'14/09/2026', Dia:'Monday',   'Horário':'08:00', Local:'TBD',       'Nome do Evento':'LAVCA - Family Office Breakfast', Organizador:'LAVCA',                    'Invite Only?':'No',  'Aprovado?':'SIM', 'Publicar?':'SIM'},
+    {Data:'14/09/2026', Dia:'Monday',   'Horário':'09:00', Local:'TBD',       'Nome do Evento':'ABVCAP Experience - VC Day',      Organizador:'ABVCAP',                   'Invite Only?':'No',  'Aprovado?':'SIM', 'Publicar?':'SIM'},
+    {Data:'14/09/2026', Dia:'Monday',   'Horário':'12:00', Local:'Itaim',     'Nome do Evento':'VIP Founders Lunch',              Organizador:'Beacon Founders, JP Morgan','Invite Only?':'No',  'Aprovado?':'SIM', 'Publicar?':'SIM'},
+    {Data:'15/09/2026', Dia:'Tuesday',  'Horário':'09:00', Local:'Itaim',     'Nome do Evento':'Canary Summit',                   Organizador:'ABVCAP',                   'Invite Only?':'No',  'Aprovado?':'SIM', 'Publicar?':'SIM'},
+    {Data:'15/09/2026', Dia:'Tuesday',  'Horário':'18:00', Local:'Pinheiros', 'Nome do Evento':'Atlantico Digital Transformation Report - Launch Cocktail', Organizador:'Atlantico', 'Invite Only?':'Yes', 'Aprovado?':'SIM', 'Publicar?':'SIM'},
+    {Data:'16/09/2026', Dia:'Wednesday','Horário':'09:00', Local:'TBD',       'Nome do Evento':'Cloud9 Capital AGM',              Organizador:'Cloud9 Capital',           'Invite Only?':'No',  'Aprovado?':'SIM', 'Publicar?':'SIM'},
+    {Data:'16/09/2026', Dia:'Wednesday','Horário':'09:00', Local:'TBD',       'Nome do Evento':'Fintech Day',                     Organizador:'Vope Capital',             'Invite Only?':'No',  'Aprovado?':'SIM', 'Publicar?':'SIM'},
+    {Data:'16/09/2026', Dia:'Wednesday','Horário':'09:00', Local:'TBD',       'Nome do Evento':'AI Track',                        Organizador:'Alexia Ventures',          'Invite Only?':'No',  'Aprovado?':'SIM', 'Publicar?':'SIM'},
+    {Data:'16/09/2026', Dia:'Wednesday','Horário':'09:30', Local:'TBD',       'Nome do Evento':'Endeavor AGM',                    Organizador:'Endeavor',                 'Invite Only?':'No',  'Aprovado?':'SIM', 'Publicar?':'SIM'},
+    {Data:'16/09/2026', Dia:'Wednesday','Horário':'12:00', Local:'Itaim',     'Nome do Evento':'Tech Founders VIP Lunch',         Organizador:'Beacon Founders',          'Invite Only?':'No',  'Aprovado?':'SIM', 'Publicar?':'SIM'},
+    {Data:'16/09/2026', Dia:'Wednesday','Horário':'19:00', Local:'TBD',       'Nome do Evento':'Founders Cocktail',               Organizador:'Across Capital',           'Invite Only?':'No',  'Aprovado?':'SIM', 'Publicar?':'SIM'},
+    {Data:'17/09/2026', Dia:'Thursday', 'Horário':'08:00', Local:'Itaim',     'Nome do Evento':'Tech Founders VIP Breakfast',     Organizador:'Beacon Founders',          'Invite Only?':'No',  'Aprovado?':'SIM', 'Publicar?':'SIM'},
+    {Data:'17/09/2026', Dia:'Thursday', 'Horário':'09:00', Local:'TBD',       'Nome do Evento':'Norte Day',                       Organizador:'Norte Ventures',           'Invite Only?':'No',  'Aprovado?':'SIM', 'Publicar?':'SIM'},
+    {Data:'17/09/2026', Dia:'Thursday', 'Horário':'20:00', Local:'TBD',       'Nome do Evento':'Norte Private Drinks',            Organizador:'Norte Ventures',           'Invite Only?':'Yes', 'Aprovado?':'SIM', 'Publicar?':'SIM'},
+    {Data:'18/09/2026', Dia:'Friday',   'Horário':'12:00', Local:'TBD',       'Nome do Evento':'Founders Retreat',                Organizador:'Endeavor',                 'Invite Only?':'Yes', 'Aprovado?':'SIM', 'Publicar?':'SIM'},
+  ],
+  apoiadores: [
+    // Hosts (5)
+    {Categoria:'Host', Nome:'Cubo',        'Logo (nome do arquivo ou URL)': CDN + '663e7d38d6809cf528e97a77_Logo_Cubo_preto.png',                    Ordem:'1', 'Publicar?':'SIM'},
+    {Categoria:'Host', Nome:'Endeavor',    'Logo (nome do arquivo ou URL)': CDN + '663e8b1d52e9e9dd44d66959_Logo_Endeavor.svg.png',                  Ordem:'2', 'Publicar?':'SIM'},
+    {Categoria:'Host', Nome:'Beacon',      'Logo (nome do arquivo ou URL)': CDN + '69de9635956f8100a31c77db_Beacon_Hor_Cor_Positivo%404x%20(1).png', Ordem:'3', 'Publicar?':'SIM'},
+    {Categoria:'Host', Nome:'AWS Startups','Logo (nome do arquivo ou URL)': CDN + '685ad88256a6e04d5f43c609_AWS_Startups_Squid-Ink_96px_RGB.png',    Ordem:'4', 'Publicar?':'SIM'},
+    {Categoria:'Host', Nome:'SPN',         'Logo (nome do arquivo ou URL)': CDN + '68ad047d72c3bcc3a9184afa_SPN_Logo_NEG_Preto_RGB.png',             Ordem:'5', 'Publicar?':'SIM'},
+    // Tech Partners (4)
+    {Categoria:'Tech Partner', Nome:'AWS',       'Logo (nome do arquivo ou URL)': CDN + '685ad88256a6e04d5f43c609_AWS_Startups_Squid-Ink_96px_RGB.png', Ordem:'1', 'Publicar?':'SIM'},
+    {Categoria:'Tech Partner', Nome:'Nvidia',    'Logo (nome do arquivo ou URL)': CDN + '685b02f76d60069e18b70757_Nvidia%20Logo.png',                   Ordem:'2', 'Publicar?':'SIM'},
+    {Categoria:'Tech Partner', Nome:'Microsoft', 'Logo (nome do arquivo ou URL)': CDN + '685c131b98019199ec7d0233_Microsoft-logo_rgb_c-gray_cut_cut.png', Ordem:'3', 'Publicar?':'SIM'},
+    {Categoria:'Tech Partner', Nome:'Oracle',    'Logo (nome do arquivo ou URL)': CDN + '688a598a856421e4ea3c5955_Oracle_rgb_black_logo.png',           Ordem:'4', 'Publicar?':'SIM'},
+    // VC Partners (29)
+    {Categoria:'VC Partner', Nome:'Norte Ventures',     'Logo (nome do arquivo ou URL)': CDN + '6643a72b446d9c5c1e09557e_Logo_Norte_Black.png', Ordem:'1',  'Publicar?':'SIM'},
+    {Categoria:'VC Partner', Nome:'[confirmar VC 2]',   'Logo (nome do arquivo ou URL)': CDN + '68529f125a27d10a7f5e473d_jruDJivBz54ANZZBXBEq3VuQBUK1689268534427_200x200.png', Ordem:'2', 'Publicar?':'SIM'},
+    {Categoria:'VC Partner', Nome:'Alexia Ventures',    'Logo (nome do arquivo ou URL)': CDN + '689101e9c9e4b4f78021fa7f_66a117e5d535f4bbb370547e_Alexia-Ventures.png', Ordem:'3', 'Publicar?':'SIM'},
+    {Categoria:'VC Partner', Nome:'Antler',             'Logo (nome do arquivo ou URL)': CDN + '6852cb6b022b73eb5ee6aa3f_Antler%20Logo_Red.png', Ordem:'4', 'Publicar?':'SIM'},
+    {Categoria:'VC Partner', Nome:'[confirmar VC 5]',   'Logo (nome do arquivo ou URL)': CDN + '6852cbc460fb76d3db239018_e4fa39ff-22c5-4e73-929c-8dcf00273dfe.png', Ordem:'5', 'Publicar?':'SIM'},
+    {Categoria:'VC Partner', Nome:'[confirmar VC 6]',   'Logo (nome do arquivo ou URL)': CDN + '6852cc103b9b052ddb445c39_7b4dc31d-7e03-43e9-a0e7-0197ea9b561f.png', Ordem:'6', 'Publicar?':'SIM'},
+    {Categoria:'VC Partner', Nome:'[confirmar VC 7]',   'Logo (nome do arquivo ou URL)': CDN + '6890cc2264905574ad2ba097_images%20(5)%20(1).png', Ordem:'7', 'Publicar?':'SIM'},
+    {Categoria:'VC Partner', Nome:'[confirmar VC 8]',   'Logo (nome do arquivo ou URL)': CDN + '6852cc80cf1686c477eedec5_8e9a3fe9-bf2d-4e8a-82b1-d19c8113f76a-4%20(1).png', Ordem:'8', 'Publicar?':'SIM'},
+    {Categoria:'VC Partner', Nome:'Domo VC',            'Logo (nome do arquivo ou URL)': CDN + '66427e701d1c68c7666a2196_Logo_Domo_Vc.png', Ordem:'9', 'Publicar?':'SIM'},
+    {Categoria:'VC Partner', Nome:'Flourish Ventures',  'Logo (nome do arquivo ou URL)': CDN + '686d3b60d06657e070bab468_Flourish-Logo-Color-Gradient%20(8)%20(1).png', Ordem:'10', 'Publicar?':'SIM'},
+    {Categoria:'VC Partner', Nome:'Headline',           'Logo (nome do arquivo ou URL)': CDN + '66427be20c60c52a74109778_Headline%20Logo.png', Ordem:'11', 'Publicar?':'SIM'},
+    {Categoria:'VC Partner', Nome:'[confirmar VC 12]',  'Logo (nome do arquivo ou URL)': CDN + '6851d269ce3506f567d8dd7e_logo1_indicator.webp', Ordem:'12', 'Publicar?':'SIM'},
+    {Categoria:'VC Partner', Nome:'Kaszek',             'Logo (nome do arquivo ou URL)': CDN + '66c3ad63922c379a8d3d3e45_Logo%20Kaszek%20Preto.png', Ordem:'13', 'Publicar?':'SIM'},
+    {Categoria:'VC Partner', Nome:'Latitud',            'Logo (nome do arquivo ou URL)': CDN + '663e7e4f640f4f55a6648ff0_Logo_Latitud_preto.png', Ordem:'14', 'Publicar?':'SIM'},
+    {Categoria:'VC Partner', Nome:'Monashees',          'Logo (nome do arquivo ou URL)': CDN + '68bf50584f7b8d8b58d0b503_Logo_Monashees_black_Crop.png', Ordem:'15', 'Publicar?':'SIM'},
+    {Categoria:'VC Partner', Nome:'NXTP Ventures',      'Logo (nome do arquivo ou URL)': CDN + '6635a864dfe3b09320ddd806_NXTP%20Ventures_Logo_High%20copy.png', Ordem:'16', 'Publicar?':'SIM'},
+    {Categoria:'VC Partner', Nome:'[confirmar VC 17]',  'Logo (nome do arquivo ou URL)': CDN + '66d0df804e264e85df60de68_image%201.png', Ordem:'17', 'Publicar?':'SIM'},
+    {Categoria:'VC Partner', Nome:'Quona Capital',      'Logo (nome do arquivo ou URL)': CDN + '66c548346a6ab2c101d04f6e_quona_logo.png', Ordem:'18', 'Publicar?':'SIM'},
+    {Categoria:'VC Partner', Nome:'[confirmar VC 19]',  'Logo (nome do arquivo ou URL)': CDN + '6851d652102e37f77f1b2c60_2eQ1mDo45D1llb7xy1DycexIe541738308589756_200x200.png', Ordem:'19', 'Publicar?':'SIM'},
+    {Categoria:'VC Partner', Nome:'SP Ventures',        'Logo (nome do arquivo ou URL)': CDN + '664392d84438a8e040532a46_sp%20ventures%20logo_black.png', Ordem:'20', 'Publicar?':'SIM'},
+    {Categoria:'VC Partner', Nome:'[confirmar VC 21]',  'Logo (nome do arquivo ou URL)': CDN + '6635a864dfe3b09320ddd7fb_IMG_0152.PNG', Ordem:'21', 'Publicar?':'SIM'},
+    {Categoria:'VC Partner', Nome:'Wow Aceleradora',    'Logo (nome do arquivo ou URL)': CDN + '687e8a58a3dc1732e48e227d_Logo_wow.png', Ordem:'22', 'Publicar?':'SIM'},
+    {Categoria:'VC Partner', Nome:'Positive Ventures',  'Logo (nome do arquivo ou URL)': CDN + '68b114bbdee326ad54d7d1fd_Positive_Ventures_logo_transparent.png', Ordem:'23', 'Publicar?':'SIM'},
+    {Categoria:'VC Partner', Nome:'Circulate Capital',  'Logo (nome do arquivo ou URL)': CDN + '68b11619b13efc1380b7ca18_circulate%20capital%20logo.png', Ordem:'24', 'Publicar?':'SIM'},
+    {Categoria:'VC Partner', Nome:'Impact Earth',       'Logo (nome do arquivo ou URL)': CDN + '68b116ea31fd5e49324cbef2_IMPACT_EARTH_LOGO%20small.png', Ordem:'25', 'Publicar?':'SIM'},
+    {Categoria:'VC Partner', Nome:'ClimateHack SP',     'Logo (nome do arquivo ou URL)': CDN + '68b1181d6b5947e467c4916a_ClimateHack-wide-chapter-logo-SAO%20PAULO.svg', Ordem:'26', 'Publicar?':'SIM'},
+    {Categoria:'VC Partner', Nome:'[confirmar VC 27]',  'Logo (nome do arquivo ou URL)': CDN + '68b1190f4e43973a04c461a7_63f583127e970649bb363940_Vertical.svg', Ordem:'27', 'Publicar?':'SIM'},
+    {Categoria:'VC Partner', Nome:'Eretz Einstein',     'Logo (nome do arquivo ou URL)': CDN + '68b118b3273f5f8b3d82fa55_LOGO-eretz-einstein-2025-18.png', Ordem:'28', 'Publicar?':'SIM'},
+    {Categoria:'VC Partner', Nome:'Vox Capital',        'Logo (nome do arquivo ou URL)': CDN + '68b11a3fc7d21bfe6ca37aea_logo_vox_transparent.png', Ordem:'29', 'Publicar?':'SIM'},
+    // Supporters (13)
+    {Categoria:'Supporter', Nome:'Colombia Techweek', 'Logo (nome do arquivo ou URL)': CDN + '66a2a97886235160bc772d0a_colombia_techweek_logo.png', Ordem:'1', 'Publicar?':'SIM'},
+    {Categoria:'Supporter', Nome:'Mexico Techweek',   'Logo (nome do arquivo ou URL)': CDN + '66a2ab094a6fbb6a5c16cb68_Mexico_Techweek_Logo.png', Ordem:'2', 'Publicar?':'SIM'},
+    {Categoria:'Supporter', Nome:'[confirmar Supp 3]','Logo (nome do arquivo ou URL)': CDN + '66c3509dcaf1254ce5cae8d4_%5BStartups%5D%20Preto%20fundo%20transparente.png', Ordem:'3', 'Publicar?':'SIM'},
+    {Categoria:'Supporter', Nome:'[confirmar Supp 4]','Logo (nome do arquivo ou URL)': CDN + '6643c5149df26c55e32e7e4a_Logo%20N.png', Ordem:'4', 'Publicar?':'SIM'},
+    {Categoria:'Supporter', Nome:'Inovabra',          'Logo (nome do arquivo ou URL)': CDN + '688a6b2bafe35f0cc5df61a9_Logo%20inovabra%20Preta.png', Ordem:'5', 'Publicar?':'SIM'},
+    {Categoria:'Supporter', Nome:'Governo de SP',     'Logo (nome do arquivo ou URL)': CDN + '689a433f92dd7d78d500957b_4-vertical-slogan%20copy_cut_SP%20Governo.png', Ordem:'6', 'Publicar?':'SIM'},
+    {Categoria:'Supporter', Nome:'[confirmar Supp 7]','Logo (nome do arquivo ou URL)': CDN + '689d28394b79b8c0d99b1eca_logo_preto.png', Ordem:'7', 'Publicar?':'SIM'},
+    {Categoria:'Supporter', Nome:'GenAI Lab',         'Logo (nome do arquivo ou URL)': CDN + '68a635edfaa8385a0e6cd729_GenAILab%20(1).png', Ordem:'8', 'Publicar?':'SIM'},
+    {Categoria:'Supporter', Nome:'[confirmar Supp 9]','Logo (nome do arquivo ou URL)': CDN + '689f5cfc7843d133eb0b2bc2_logo%20(7).png', Ordem:'9', 'Publicar?':'SIM'},
+    {Categoria:'Supporter', Nome:'Globiant',          'Logo (nome do arquivo ou URL)': CDN + '68b11348d07a344dfae31f14_Globiant%20Logo.png', Ordem:'10', 'Publicar?':'SIM'},
+    {Categoria:'Supporter', Nome:'Torq',              'Logo (nome do arquivo ou URL)': CDN + '68b9e2f89fe886e2832d081a_originais_torq_rgb_transparente-01.png', Ordem:'11', 'Publicar?':'SIM'},
+    {Categoria:'Supporter', Nome:'SlingHub',          'Logo (nome do arquivo ou URL)': CDN + '68b9e36729f1d646c083c197_SlingHub-Logo-Azul.svg', Ordem:'12', 'Publicar?':'SIM'},
+    {Categoria:'Supporter', Nome:'Startups LATAM',    'Logo (nome do arquivo ou URL)': CDN + '68bb2af15c76bd8840e48123_LOGOS%20STARTUPS%20LATAM_crop.png', Ordem:'13', 'Publicar?':'SIM'},
+  ],
+  configuracoes: [
+    {Chave:'hero_titulo', Valor:'SAO PAULO<br/>TECH WEEK'},
+    {Chave:'hero_year', Valor:'2026'},
+    {Chave:'hero_dates', Valor:'SEP 14–18 2026'},
+  ]
+};
+
+function applyConfig(config) {
+  if (!config) return;
+  const map = {};
+  config.forEach(r => { if (r.Chave) map[r.Chave] = r.Valor; });
+  const setText = (id, val) => { if (!val) return; const el = document.getElementById(id); if (el) el.textContent = val; };
+  const setHtml = (id, val) => { if (!val) return; const el = document.getElementById(id); if (el) el.innerHTML = val; };
+  if (map.hero_titulo)    setHtml('hero-title', map.hero_titulo + (map.hero_year ? '<span class="year" id="hero-year">' + escapeHtml(map.hero_year) + '</span>' : ''));
+  if (map.hero_dates)     setText('hero-dates', map.hero_dates);
+  if (map.banner_text)    setHtml('banner', map.banner_text);
+  if (map.disclaimer)     setText('footer-disclaimer', map.disclaimer);
+  if (map.email_contato)  { const el = document.getElementById('footer-contact'); if (el) el.href = 'mailto:' + map.email_contato; }
+}
+
+/* --- Day helpers --- */
+const DAYS_EN = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const PT_TO_EN = {
+  'segunda':'Monday','segunda-feira':'Monday',
+  'terça':'Tuesday','terca':'Tuesday','terça-feira':'Tuesday','terca-feira':'Tuesday',
+  'quarta':'Wednesday','quarta-feira':'Wednesday',
+  'quinta':'Thursday','quinta-feira':'Thursday',
+  'sexta':'Friday','sexta-feira':'Friday',
+  'sábado':'Saturday','sabado':'Saturday',
+  'domingo':'Sunday'
+};
+function parseDate(dmy) {
+  if (!dmy) return null;
+  const m = dmy.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  if (!m) return null;
+  return new Date(Number(m[3]), Number(m[2]) - 1, Number(m[1]));
+}
+function getDayName(ev) {
+  // Prefer Dia column if already in English
+  const raw = (ev.Dia || '').trim();
+  if (raw) {
+    const lower = raw.toLowerCase();
+    if (DAYS_EN.map(d=>d.toLowerCase()).includes(lower)) return DAYS_EN.find(d => d.toLowerCase() === lower);
+    if (PT_TO_EN[lower]) return PT_TO_EN[lower];
+  }
+  // Otherwise derive from Data
+  const d = parseDate(ev.Data);
+  return d ? DAYS_EN[d.getDay()] : null;
+}
+function getDayNum(ev) {
+  const d = parseDate(ev.Data);
+  return d ? d.getDate() : null;
+}
+
+/* --- Schedule rendering with day tabs --- */
+function renderSchedule(events) {
+  const tabsEl = document.getElementById('day-tabs');
+  const panelsEl = document.getElementById('day-panels');
+  const visible = events.filter(e =>
+    (e['Aprovado?'] || '').toUpperCase() === 'SIM' &&
+    (e['Publicar?'] || '').toUpperCase() === 'SIM'
+  );
+  if (!visible.length) {
+    tabsEl.innerHTML = '';
+    panelsEl.innerHTML = '<div class="empty-day">Program coming soon.</div>';
+    return;
+  }
+
+  // Group by date key (YYYYMMDD) to preserve chronological order even if Dia is missing
+  const byKey = new Map();
+  visible.forEach(e => {
+    const d = parseDate(e.Data);
+    if (!d) return;
+    const key = d.getFullYear()*10000 + (d.getMonth()+1)*100 + d.getDate();
+    if (!byKey.has(key)) byKey.set(key, { date: d, dayName: getDayName(e), events: [] });
+    byKey.get(key).events.push(e);
+  });
+  const groups = [...byKey.entries()].sort((a, b) => a[0] - b[0]).map(([_, g]) => g);
+  // Sort events within each group by time
+  groups.forEach(g => g.events.sort((a, b) => (a['Horário'] || '').localeCompare(b['Horário'] || '')));
+
+  // Build tabs + panels
+  tabsEl.innerHTML = groups.map((g, i) => {
+    const label = (g.dayName || '').toUpperCase() + ' ' + g.date.getDate();
+    return `<button class="day-tab ${i === 0 ? 'active' : ''}" role="tab" data-idx="${i}">${label}</button>`;
+  }).join('');
+  panelsEl.innerHTML = groups.map((g, i) => `
+    <div class="day-panel ${i === 0 ? 'active' : ''}" data-idx="${i}" role="tabpanel">
+      <div class="events-list">
+        ${g.events.map(eventRow).join('')}
+      </div>
+    </div>
+  `).join('');
+
+  // Wire tab clicks
+  tabsEl.querySelectorAll('.day-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = btn.dataset.idx;
+      tabsEl.querySelectorAll('.day-tab').forEach(b => b.classList.toggle('active', b.dataset.idx === idx));
+      panelsEl.querySelectorAll('.day-panel').forEach(p => p.classList.toggle('active', p.dataset.idx === idx));
+    });
+  });
+}
+
+function formatTime(t) {
+  if (!t) return '';
+  const m = t.match(/^(\d{1,2}):?(\d{2})/);
+  if (!m) return t;
+  let h = Number(m[1]);
+  const suffix = h < 12 ? 'AM' : 'PM';
+  h = h % 12 || 12;
+  return `${h}:${m[2]}${suffix}`;
+}
+
+function eventRow(e) {
+  const inv = (e['Invite Only?'] || '').trim().toLowerCase();
+  const isInvite = inv === 'sim' || inv === 'yes';
+  const link = e['Link de Inscrição'] || e['Link de inscrição'] || '';
+  return `
+    <div class="event-row">
+      <div class="ev-time">${escapeHtml(formatTime(e['Horário'] || ''))}</div>
+      <div class="ev-loc">${escapeHtml((e.Local || '').toUpperCase())}</div>
+      <div>
+        <div class="ev-name">${escapeHtml(e['Nome do Evento'] || '')}</div>
+        <div class="ev-org">${escapeHtml(e.Organizador || '')}</div>
+      </div>
+      ${isInvite
+        ? '<div class="ev-invite">INVITE ONLY</div>'
+        : (link ? `<a class="ev-cta" href="${encodeURI(link)}" target="_blank" rel="noopener">REGISTER</a>` : '<div></div>')}
+    </div>
+  `;
+}
+
+/* --- Sponsors --- */
+function renderSponsors(sponsors) {
+  const root = document.getElementById('sponsors-root');
+  const visible = sponsors.filter(s => (s['Publicar?'] || '').toUpperCase() === 'SIM');
+  if (!visible.length) { root.innerHTML = '<div class="loading">Partners coming soon.</div>'; return; }
+
+  const groups = { 'Host': [], 'Tech Partner': [], 'VC Partner': [], 'Supporter': [] };
+  visible.forEach(s => { if (groups[s.Categoria]) groups[s.Categoria].push(s); });
+  Object.values(groups).forEach(g => g.sort((a, b) => Number(a.Ordem || 999) - Number(b.Ordem || 999)));
+
+  const label = { 'Host': 'Hosts', 'Tech Partner': 'Tech Partners', 'VC Partner': 'VC Partners', 'Supporter': 'Supporters' };
+  let html = '';
+  ['Host', 'Tech Partner', 'VC Partner', 'Supporter'].forEach(cat => {
+    const items = groups[cat];
+    if (!items.length) return;
+    const big = cat === 'Host' || cat === 'Tech Partner';
+    html += `<div class="sponsor-group">
+      <h3 class="group-title">${label[cat]}</h3>
+      <div class="sponsor-grid ${big ? 'big' : 'sm'}">
+        ${items.map(s => sponsorCell(s)).join('')}
+      </div>
+    </div>`;
+  });
+  root.innerHTML = html;
+  root.classList.remove('loading');
+}
+function sponsorCell(s) {
+  const logo = s['Logo (nome do arquivo ou URL)'] || s['Logo'] || '';
+  const name = s.Nome || '';
+  if (/^\[confirmar/i.test(name) && !logo) return ''; // skip empty placeholder rows
+  if (logo && /^https?:\/\//.test(logo)) {
+    return `<div class="sponsor-cell"><img src="${logo}" alt="${escapeHtml(name)}" loading="lazy" /></div>`;
+  }
+  if (logo) {
+    return `<div class="sponsor-cell"><img src="logos/${encodeURIComponent(logo)}" alt="${escapeHtml(name)}" loading="lazy" onerror="this.parentNode.innerHTML='<span>${escapeHtml(name)}</span>'; this.parentNode.classList.add('placeholder');" /></div>`;
+  }
+  return `<div class="sponsor-cell placeholder"><span>${escapeHtml(name)}</span></div>`;
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
+}
+
+/* --- Form handlers --- */
+document.getElementById('host-form').addEventListener('submit', async (ev) => {
+  ev.preventDefault();
+  const statusEl = document.getElementById('form-status');
+  const form = ev.target;
+  const data = Object.fromEntries(new FormData(form).entries());
+  if (data.company) { statusEl.className = 'form-status success'; statusEl.textContent = 'Submission received. You will hear back within 5 business days.'; form.reset(); return; }
+  if (!WEBHOOK_URL) {
+    statusEl.className = 'form-status error';
+    statusEl.textContent = 'Form backend not connected yet (set WEBHOOK_URL in index.html).';
+    return;
+  }
+  statusEl.className = 'form-status';
+  statusEl.textContent = 'Sending…';
+  try {
+    const res = await fetch(WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...data, timestamp: new Date().toISOString() })
+    });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    statusEl.className = 'form-status success';
+    statusEl.textContent = 'Submission received. You will hear back within 5 business days.';
+    form.reset();
+  } catch (err) {
+    statusEl.className = 'form-status error';
+    statusEl.textContent = 'Something went wrong. Please try again or email contato@techweeksaopaulo.com.br';
+    console.error(err);
+  }
+});
+document.getElementById('notify-form').addEventListener('submit', (ev) => {
+  ev.preventDefault();
+  const out = document.getElementById('notify-status');
+  out.textContent = 'Thanks! We will keep you posted.';
+  ev.target.reset();
+});
+
+/* --- Bootstrap --- */
+(async () => {
+  const [events, sponsors, config] = await Promise.all([
+    fetchSheet(GIDS.eventos),
+    fetchSheet(GIDS.apoiadores),
+    fetchSheet(GIDS.configuracoes)
+  ]);
+  applyConfig(config || DEMO.configuracoes);
+  renderSchedule(events || DEMO.eventos);
+  renderSponsors(sponsors || DEMO.apoiadores);
+})();
+</script>
+
+</body>
+</html>
