@@ -48,26 +48,29 @@ function doPost(e) {
     const sheet = ss.getSheetByName(SHEET_NAME);
     if (!sheet) return json_({ ok: false, error: 'sheet_not_found' });
 
-    // Ordem das colunas EXATAMENTE como estão na aba Submissões:
-    // Timestamp | Nome do Evento | Data | Horário | Local | Descrição |
-    // Categoria | Organizador | Link de Inscrição | Invite Only? |
-    // Nome do Submissor | Email | Telefone | Status | Notas
+    // Ordem das colunas EXATAMENTE como estão na aba Submissões.
+    // As 10 primeiras batem com as 10 primeiras de Eventos, pra permitir
+    // copy-paste direto ao aprovar uma submissão:
+    // Data | Dia | Horário | Local | Nome do Evento | Organizador |
+    // Categoria | Link de Inscrição | Invite Only? | Descrição |
+    // Nome do Submissor | Email | Telefone | Timestamp | Status | Notas
     const row = [
-      new Date(),
-      clip_(payload.eventName, 120),
-      clip_(payload.date, 20),
-      clip_(payload.time, 10),
-      clip_(payload.location, 100),
-      clip_(payload.description, 800),
-      clip_(payload.category, 60),
-      clip_(payload.organizer, 120),
-      clip_(payload.registrationLink, 400),
-      clip_(payload.inviteOnly, 10),
-      clip_(payload.submitterName, 120),
-      clip_(payload.submitterEmail, 200),
-      clip_(payload.submitterPhone, 40),
-      'Novo',    // Status inicial
-      ''          // Notas (curadoria preenche)
+      formatDate_(payload.date),            // 1  Data (DD/MM/YYYY)
+      getWeekday_(payload.date),            // 2  Dia (Monday, Tuesday...)
+      clip_(payload.time, 10),              // 3  Horário
+      clip_(payload.location, 100),         // 4  Local
+      clip_(payload.eventName, 120),        // 5  Nome do Evento
+      clip_(payload.organizer, 120),        // 6  Organizador
+      clip_(payload.category, 60),          // 7  Categoria
+      clip_(payload.registrationLink, 400), // 8  Link de Inscrição
+      clip_(payload.inviteOnly, 10),        // 9  Invite Only?
+      clip_(payload.description, 800),      // 10 Descrição
+      clip_(payload.submitterName, 120),    // 11 Nome do Submissor
+      clip_(payload.submitterEmail, 200),   // 12 Email
+      clip_(payload.submitterPhone, 40),    // 13 Telefone
+      new Date(),                           // 14 Timestamp
+      'Novo',                               // 15 Status inicial
+      ''                                    // 16 Notas (curadoria preenche)
     ];
     sheet.appendRow(row);
 
@@ -91,6 +94,25 @@ function doGet() {
 function clip_(s, n) {
   if (!s) return '';
   return String(s).slice(0, n);
+}
+
+/** Converte 'YYYY-MM-DD' (formato do input type=date) pra 'DD/MM/YYYY' pra bater com a aba Eventos. */
+function formatDate_(isoStr) {
+  if (!isoStr) return '';
+  const s = String(isoStr).trim();
+  const parts = s.split('-');
+  if (parts.length !== 3) return s.slice(0, 20);
+  return parts[2] + '/' + parts[1] + '/' + parts[0];
+}
+
+/** Retorna dia da semana em inglês (Monday, Tuesday...) a partir de 'YYYY-MM-DD'. */
+function getWeekday_(isoStr) {
+  if (!isoStr) return '';
+  try {
+    const d = new Date(String(isoStr).trim() + 'T12:00:00');  // meio-dia evita bug de timezone
+    if (isNaN(d.getTime())) return '';
+    return ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][d.getDay()];
+  } catch (e) { return ''; }
 }
 
 function fingerprint_(p) {
