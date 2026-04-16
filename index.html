@@ -7,6 +7,7 @@
 <meta name="description" content="São Paulo Tech Week 2026 — Sep 14–18. A week of open and invite-only events bringing together the LatAm tech community." />
 <meta property="og:title" content="São Paulo Tech Week 2026" />
 <meta property="og:description" content="Sep 14–18, 2026. A week of events across São Paulo." />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
@@ -619,7 +620,16 @@ function applyConfig(config) {
   config.forEach(r => { if (r.Chave) map[r.Chave] = r.Valor; });
   const setText = (id, val) => { if (!val) return; const el = document.getElementById(id); if (el) el.textContent = val; };
   const setHtml = (id, val) => { if (!val) return; const el = document.getElementById(id); if (el) el.innerHTML = val; };
-  if (map.hero_titulo)    setHtml('hero-title', map.hero_titulo + (map.hero_year ? '<span class="year" id="hero-year">' + escapeHtml(map.hero_year) + '</span>' : ''));
+  // Hero title: preferir hero_linha_1 + hero_linha_2 (2 linhas).
+  // Retrocompat: se só hero_titulo existir, usa como string única sem duplicar o year.
+  if (map.hero_linha_1 || map.hero_linha_2) {
+    const l1 = escapeHtml(map.hero_linha_1 || '');
+    const l2 = map.hero_linha_2 ? '<br/>' + escapeHtml(map.hero_linha_2) : '';
+    const yr = map.hero_year ? '<span class="year" id="hero-year">' + escapeHtml(map.hero_year) + '</span>' : '';
+    setHtml('hero-title', l1 + l2 + yr);
+  } else if (map.hero_titulo) {
+    setHtml('hero-title', escapeHtml(map.hero_titulo));
+  }
   if (map.hero_dates)     setText('hero-dates', map.hero_dates);
   if (map.banner_text)    setHtml('banner', map.banner_text);
   if (map.disclaimer)     setText('footer-disclaimer', map.disclaimer);

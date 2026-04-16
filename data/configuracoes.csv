@@ -2,7 +2,9 @@ Chave,Valor,Descrição
 edicao_atual,2026,Ano da edição atual
 data_inicio,14/09/2026,Data de início da Tech Week
 data_fim,18/09/2026,Data de fim da Tech Week
-hero_titulo,São Paulo Tech Week 2026,Título do hero
+hero_linha_1,São Paulo,Primeira linha do título do hero
+hero_linha_2,Tech Week,Segunda linha do título do hero
+hero_year,2026,Ano destacado em amarelo no hero
 hero_subtitulo,14–18 de setembro · São Paulo,Subtítulo do hero
 cta_principal,Be Notified,Texto do CTA principal
 cta_principal_link,#notify,Link do CTA principal
