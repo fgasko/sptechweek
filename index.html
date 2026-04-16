@@ -797,9 +797,13 @@ document.getElementById('host-form').addEventListener('submit', async (ev) => {
   statusEl.className = 'form-status';
   statusEl.textContent = 'Sending…';
   try {
+    // NOTE: Content-Type é 'text/plain' de propósito. Apps Script não responde preflight
+    // corretamente pra application/json; text/plain é "simple request" no CORS spec e
+    // evita o preflight. O Apps Script parseia o body com JSON.parse(e.postData.contents),
+    // então o shape da payload continua igual.
     const res = await fetch(WEBHOOK_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
       body: JSON.stringify({ ...data, timestamp: new Date().toISOString() })
     });
     if (!res.ok) throw new Error('HTTP ' + res.status);
